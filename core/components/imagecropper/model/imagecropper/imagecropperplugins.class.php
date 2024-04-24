@@ -66,7 +66,7 @@ class ImageCropperPlugins extends ImageCropper
                     'name'          => 'sizes',
                     'title'         => $this->modx->lexicon('clientsettings.imagecropper.label_sizes'),
                     'description'   => $this->modx->lexicon('clientsettings.imagecropper.label_sizes_desc'),
-                    'value'         => '{"desktop": {"name": "Desktop", "size": "1000x500"}, "mobile": {"name": "Mobiel", "size": "768x500"}}'
+                    'value'         => '{"desktop": {"name": "Desktop", "size": "1000x500"}, "mobile": {"name": "mobile", "size": "768x500"}}'
                 ], [
                     'xtype'         => 'modx-combo-boolean',
                     'name'          => 'previews',

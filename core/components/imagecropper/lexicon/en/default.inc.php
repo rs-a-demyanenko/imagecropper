@@ -43,6 +43,6 @@ $_lang['imagecropper.error_crop']                       = 'Error while creating 
 $_lang['imagecropper.success_image']                    = 'Crop saved.';
 $_lang['imagecropper.default']                          = 'Original';
 $_lang['imagecropper.option_sets']                      = 'Crops';
-$_lang['imagecropper.option_sets_desc']                 = 'A defined JSON for the crops, for example {"desktop": {"name": "Desktop", "size": "1000x500"}, "mobile": {"name": "Mobiel", "size": "768x500"}}.';
+$_lang['imagecropper.option_sets_desc']                 = 'A defined JSON for the crops, for example {"desktop": {"name": "Desktop", "size": "1000x500"}, "mobile": {"name": "mobile", "size": "768x500"}}.';
 $_lang['imagecropper.option_previews']                  = 'Show preview';
 $_lang['imagecropper.option_previews_desc']             = 'Display the previews of the crops under the field.';
