@@ -83,7 +83,7 @@ class ImageCropperCropProcessor extends modProcessor
                 $this->source->createContainer($imagePath, '/');
                 $this->source->errors = array();
 
-                if (in_array(strtolower($imageExtension), ['jpg', 'jpeg', 'png', 'gif'], true)) {
+                if (in_array(strtolower($imageExtension), ['jpg', 'jpeg', 'png', 'webp'], true)) {
                     /* use md5 file hash in crop name */
                     $fileHash = '';
                     try {
@@ -119,15 +119,7 @@ class ImageCropperCropProcessor extends modProcessor
                     imagecopyresampled($cropSource, $canvasSource, 0, 0, 0, 0, (int) $this->getProperty('cropWidth'), (int) $this->getProperty('cropHeight'), (int) $this->getProperty('canvasWidth'), (int) $this->getProperty('canvasHeight'));
 
                     ob_start();
-                    if (strtolower($imageExtension) === 'jpg') {
-                        imagejpeg($cropSource);
-                    } else if (strtolower($imageExtension) === 'jpeg') {
-                        imagejpeg($cropSource);
-                    } else if (strtolower($imageExtension) === 'png') {
-                        imagepng($cropSource);
-                    } else if (strtolower($imageExtension) === 'gif') {
-                        imagegif($cropSource);
-                    }
+                    imagewebp($cropSource, null, 100);
                     $result = ob_get_clean();
 
                     imagedestroy($source);
