@@ -307,6 +307,10 @@ ImageCropper.window.CropImage = function(config) {
                         text        : '<i class="icon icon-trash"></i>',
                         handler     : this.onRemoveCropperRecord,
                         scope       : this
+                    }, {
+                        text        : '<i class="icon icon-files-o"></i>',
+                        handler     : this.onAutoUpdateCropperRecord,
+                        scope       : this
                     }, '->', {
                         text        : _('imagecropper.reset'),
                         handler     : this.onResetCropperSize,
@@ -758,7 +762,23 @@ Ext.extend(ImageCropper.window.CropImage, MODx.Window, {
 
         this.setCropperState('start');
     },
-    onUpdateCropperRecord: function() {
+    onAutoUpdateCropperRecord: function(el, data, index) {
+        if (this.isInitialized()) {
+            let sizes = Object.keys(this.getCropperSizes());
+            if(!index) index = 0;
+            if(index < sizes.length) {                
+                this.cropperSize = sizes[index];
+                this.onResetCropperSize();
+
+                Promise.all([new Promise((resolve) => {
+                    this.onUpdateCropperRecord(resolve);
+                })]).then(() => {
+                    this.onAutoUpdateCropperRecord(el, data, index + 1);
+                })
+            }
+        }
+    },
+    onUpdateCropperRecord: function(resolve) {
         if (this.isInitialized()) {
             var data = {};
 
@@ -793,6 +813,12 @@ Ext.extend(ImageCropper.window.CropImage, MODx.Window, {
                             this.onUpdateCropperImage();
 
                             this.setCropperState('saved');
+                            
+                            try{
+                                resolve();
+                            }catch(err){
+                                console.error(err);
+                            }
                         },
                         scope       : this
                     },
@@ -806,6 +832,7 @@ Ext.extend(ImageCropper.window.CropImage, MODx.Window, {
             });
 
             this.setCropperState('saving');
+            
         }
     }
 });
