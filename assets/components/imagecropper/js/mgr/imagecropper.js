@@ -502,6 +502,14 @@ Ext.extend(ImageCropper.window.CropImage, MODx.Window, {
     },
     onClose: function(btn) {
         if (this.isInitialized()) {
+            if(!this.record.sizes && btn.text == 'OK') {
+                MODx.msg.alert(
+                    _('imagecropper.changes.title'),
+                    _('imagecropper.save.no_crop'),
+                    function(){},
+                    MODx
+                );
+            }
             if (this.cropperState !== 'saved' && this.cropperState !== 'ready') {
                 Ext.MessageBox.confirm(_('imagecropper.changes.title'), _('imagecropper.changes.content'), (function(btn) {
                     if (btn === 'yes') {
