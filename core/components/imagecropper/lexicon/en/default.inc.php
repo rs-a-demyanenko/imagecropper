@@ -46,3 +46,4 @@ $_lang['imagecropper.option_sets']                      = 'Crops';
 $_lang['imagecropper.option_sets_desc']                 = 'A defined JSON for the crops, for example {"desktop": {"name": "Desktop", "size": "1000x500"}, "mobile": {"name": "Mobiel", "size": "768x500"}}.';
 $_lang['imagecropper.option_previews']                  = 'Show preview';
 $_lang['imagecropper.option_previews_desc']             = 'Display the previews of the crops under the field.';
+$_lang['imagecropper.save.no_crop']                     = 'Not a single crop has been created. There may be problems when displaying images.';
