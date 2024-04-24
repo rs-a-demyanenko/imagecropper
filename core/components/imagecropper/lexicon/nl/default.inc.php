@@ -43,7 +43,7 @@ $_lang['imagecropper.error_crop']                       = 'Fout bij aanmaken van
 $_lang['imagecropper.success_image']                    = 'Er is een uitsnede opgeslagen.';
 $_lang['imagecropper.default']                          = 'Orgineel';
 $_lang['imagecropper.option_sets']                      = 'Uitsnedes';
-$_lang['imagecropper.option_sets_desc']                 = 'Een voor gedefinieerde JSON voor de uitsnedes, bijvoorbeeld {"desktop": {"name": "Desktop", "size": "1000x500"}, "mobile": {"name": "Mobiel", "size": "768x500"}}.';
+$_lang['imagecropper.option_sets_desc']                 = 'Een voor gedefinieerde JSON voor de uitsnedes, bijvoorbeeld {"desktop": {"name": "Desktop", "size": "1000x500"}, "mobile": {"name": "mobile", "size": "768x500"}}.';
 $_lang['imagecropper.option_previews']                  = 'Previews tonen';
 $_lang['imagecropper.option_previews_desc']             = 'De previews van de uitsnedes tonen onder het veld.';
 

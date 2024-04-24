@@ -22,7 +22,7 @@
                 name        : 'inopt_sizes',
                 anchor      : '100%',
                 allowBlank  : false,
-                value       : params['sizes'] || '{"desktop": {"name": "Desktop", "size": "1000x500"}, "mobile": {"name": "Mobiel", "size": "768x500"}}'
+                value       : params['sizes'] || '{"desktop": {"name": "Desktop", "size": "1000x500"}, "mobile": {"name": "mobile", "size": "768x500"}}'
             }, {
                 xtype       : MODx.expandHelp ? 'label' : 'hidden',
                 html        : '{/literal}{$imagecropper.option_sets_desc}{literal}',
