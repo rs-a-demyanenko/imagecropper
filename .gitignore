@@ -1,3 +1,17 @@
-.DS_Store
-.idea
-config.core.php
+```gitignore
+# Bitrix specific
+bitrix/modules/*/install/admin/
+bitrix/modules/*/install/components/
+bitrix/modules/*/install/gadgets/
+bitrix/modules/*/install/images/
+bitrix/modules/*/install/js/
+bitrix/modules/*/install/themes/
+bitrix/modules/*/lang/*/install/
+bitrix/modules/*/lang/*/options.php
+bitrix/modules/*/include.php
+bitrix/modules/*/version.php
+bitrix/modules/*/.settings.php
+bitrix/modules/*/lib/
+bitrix/migration_plan.md
+bitrix/project_documentation.md
+```
